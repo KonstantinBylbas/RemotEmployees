@@ -1,0 +1,20 @@
+@import '../../index.scss';
+
+nav{
+    background-color: $primary;
+
+    .container{
+        padding: 18px 0;
+        align-items: center;
+        justify-content: space-between;
+
+        a{
+            margin: 0 18px;
+            color: $light;
+        }
+
+        button{
+            margin: 0 0 0 18px;
+        }
+    }
+}

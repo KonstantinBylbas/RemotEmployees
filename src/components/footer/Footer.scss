@@ -1,0 +1,45 @@
+@import '../../index.scss';
+
+footer{
+    background-color: $primary;
+
+    .container{
+        padding: 100px 0 80px 0;
+        justify-content: space-between;
+
+        *{
+            color: $light;
+        }
+
+        div{
+            width: 25%;
+
+            &:first-of-type{
+                .row{
+                    width: 100%;
+                    margin: 45px 0 0 0;
+                    justify-content: space-between;
+                }
+            }
+
+            &:nth-of-type(2){
+                a{
+                    margin: 13px 0;
+                    display: flex;
+                    align-items: center;
+
+                    svg{
+                        margin: 0 10px 0 0;
+                    }
+                }
+            }
+
+            &:nth-of-type(3){
+                a{
+                    margin: 13px 0;
+                    display: block;
+                }
+            }
+        }
+    }
+}

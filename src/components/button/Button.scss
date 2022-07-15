@@ -1,0 +1,31 @@
+@import '../../index.scss';
+
+button{
+    width: 168px;
+    height: 38px;
+    text-transform: uppercase;
+    color: $light;
+    background-color: $primary;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &.secondary{
+        background-color: $secondary;
+    }
+
+    &.big{
+        width: 268px;
+        height: 58px;
+    }
+
+    &:hover, &:active{
+        border-color: $light;
+    }
+
+    &:active{
+        color: $primary;
+        background-color: $light;
+    }
+}
