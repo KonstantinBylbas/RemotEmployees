@@ -17,4 +17,61 @@ nav{
             margin: 0 0 0 18px;
         }
     }
+
+    .menuBtn{
+        display: none;
+        cursor: pointer;
+    }
+
+    @media only screen and(max-width: 1200px) {
+        .container{
+            .menu{
+                width: 378px;
+                position: fixed;
+                top: -130vh;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: $primary;
+                transition: 0.3s;
+
+                &.open{
+                    top: 95px;
+                }
+
+                a{
+                    margin: 21px 0;
+                    position: relative;
+                    font-weight: 800;
+
+                    &::after{
+                        content: '';
+                        width: 0;
+                        height: 2px;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        display: block;
+                        background-color: $light;
+                        transition: 0.3s;
+                    }
+
+                    &:hover{
+                        &::after{
+                            width: 100%;
+                        }
+                    }
+                }
+
+                button{
+                    display: none;
+                }
+            }
+
+            .menuBtn{
+                display: block;
+            }
+        }
+    }
 }

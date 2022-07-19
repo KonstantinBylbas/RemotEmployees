@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import Button from '../button/Button';
 import './Nav.scss';
 
 export default function Nav() {
 
+    const[isOpenMenu, setIsOpenMenu] = useState(false);
 
     return (
         <nav>
@@ -34,7 +36,7 @@ export default function Nav() {
                     </defs>
                 </svg>
 
-                <div>
+                <div className={`menu ${isOpenMenu ? 'open' : ''}`}>
                     <a href="#services">
                         Услуги
                     </a>
@@ -49,6 +51,12 @@ export default function Nav() {
                     </a>
                     <Button text='Заказать' type='secondary' />
                 </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="49" height="13" viewBox="0 0 49 13" fill="none" className='menuBtn' onClick={() => setIsOpenMenu(!isOpenMenu)}>
+                    <circle cx="42.5" cy="6.5" r="6.5" fill="white" />
+                    <circle cx="24.5" cy="6.5" r="6.5" fill="white" />
+                    <circle cx="6.5" cy="6.5" r="6.5" fill="white" />
+                </svg>
             </div>
         </nav>
     )
