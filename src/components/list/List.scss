@@ -1,0 +1,77 @@
+@import "../../index.scss";
+
+.list {
+    margin: 10px 0;
+    padding: 18px 44px;
+    background-color: $light;
+    border-radius: 15px;
+    cursor: pointer;
+
+    &.open {
+        .head {
+            svg {
+                circle {
+                    fill: $primary;
+                }
+            }
+
+            .arrow {                
+                &.top{
+                    opacity: 0;
+                }
+
+                &.bottom{
+                    opacity: 1;
+                }
+            }
+        }
+
+        .body{
+            max-height: 20rem;
+            margin: 32px 12px 0 12px;
+        }
+    }
+
+    .head {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        svg {
+            margin: 0 28px 0 0;
+
+            circle {
+                transition: 0.3s;
+            }
+        }
+
+        .arrow {
+            padding: 7px;
+            display: inline-block;
+            position: absolute;
+            top: calc(50% - 10px);
+            right: 23px;
+            border: solid black;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transition: 0.3s;
+
+            &.bottom {
+                top: 50%;
+                transform: rotate(225deg);
+                -webkit-transform: rotate(225deg);
+                opacity: 0;
+            }
+        }
+    }
+
+    .body {
+        max-height: 0;
+        margin: 0 12px;
+        padding: 0 40px;
+        border-left: 1px solid;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+}

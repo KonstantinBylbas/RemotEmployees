@@ -35,16 +35,16 @@ export default function Nav() {
                 </svg>
 
                 <div>
-                    <a href="#">
+                    <a href="#services">
                         Услуги
                     </a>
-                    <a href="#">
+                    <a href="#portfolio">
                         Портфолио
                     </a>
-                    <a href="#">
+                    <a href="#stages">
                         Этапы
                     </a>
-                    <a href="#">
+                    <a href="#designers">
                         Дизайнеры
                     </a>
                     <Button text='Заказать' type='secondary' />

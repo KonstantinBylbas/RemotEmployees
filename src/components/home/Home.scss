@@ -1,5 +1,160 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
-.home{
-    
+.home {
+    header,
+    &_section_3 {
+        .container {
+            padding: 171px 0 180px 0;
+
+            h1,
+            h2,
+            p {
+                width: 48%;
+            }
+
+            p {
+                margin: 20px 0 58px 0;
+            }
+        }
+    }
+
+    header{
+        background: url(./assets/background/header/cart.webp) right 227px top 92px no-repeat, url(./assets/background/header/sphere1right.webp) right 171px bottom 365px no-repeat, url(./assets/background/header/sphere0right.webp) right 249px bottom 295px no-repeat, url(./assets/background/header/elipseRight.webp) right center no-repeat, url(./assets/background/header/element0Left.webp) left 65px bottom 95px no-repeat, url(./assets/background/header/elipseLeft.webp) left bottom 41px no-repeat, url(./assets/background/header/sphereLeft.webp) left 239px bottom 594px no-repeat;
+    }
+
+    section {
+        &:nth-of-type(odd) {
+            background-color: $primaryLight;
+        }
+
+        .container {
+            padding: 120px 0;
+
+            h2 {
+                margin: 0 0 84px 0;
+                text-align: center;
+            }
+        }
+    }
+
+    &_section {
+        &_0 {
+            background: url(./assets/background/section0.webp) right 145px bottom 92px no-repeat;
+        }
+
+        &_1{
+            background: url(./assets/background/section1left.webp) left 187px top 129px no-repeat, url(./assets/background/section1right.webp) right 186px bottom 47px no-repeat;
+
+            .container{
+                padding: 120px 0 200px 0 !important;
+            }
+
+            .slick-track{
+                display: flex;
+                align-items: stretch;
+
+                .slick-slide {
+                    position: relative;
+                    left: 395px;
+                }
+            }
+            
+            .block{
+                width: 98% !important;
+                height: 450px;
+                margin: 0 auto;
+                padding: 57px 70px;
+                display: flex !important;
+                align-items: center;
+                border: solid 2px $primary;
+                border-radius: 15px;
+
+                h3{
+                    margin: 0 0 29px 0;
+                }
+            }
+        }
+
+        &_2 {
+            background: url(./assets/background/section2left.webp) left 23px top 301px no-repeat, url(./assets/background/section2right.webp) right 123px bottom 245px no-repeat;
+
+            .grid {
+                display: grid;
+                grid-template-columns: 49% 49%;
+                gap: 2%;
+
+                a {
+                    position: relative;
+                    border-radius: 15px;
+                    overflow: hidden;
+
+                    &:hover {
+                        span {
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            background-color: $primary;
+                        }
+                    }
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    span {
+                        width: 0;
+                        height: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transition: 0.3s;
+                        overflow: hidden;
+                        white-space: nowrap;
+
+                        * {
+                            color: $light;
+                        }
+                    }
+                }
+            }
+        }
+
+        &_3{
+            background: url(./assets/background/section3left.webp) left 153px top 150px no-repeat, url(./assets/background/section3orders.webp) right 145px bottom 104px no-repeat, url(./assets/background/section3right0.webp) right 312px top 137px no-repeat, url(./assets/background/section3right1.webp) right 383px top 145px no-repeat;
+        }
+
+        &_4 {
+            background: url(./assets/background/section4left.webp) left 232px top 262px no-repeat, url(./assets/background/section4right.webp) right 405px top 289px no-repeat;
+
+            .container {
+                width: 470px;
+                text-align: center;
+
+                h2 {
+                    margin: 0 !important;
+                }
+
+                p {
+                    margin: 27px 0;
+                }
+
+                form {
+                    input {
+                        width: 100%;
+                        margin: 10px 0;
+                        padding: 19px 14px;
+                        border: 1px solid #6eb1fb;
+                        border-radius: 10px;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
 }
