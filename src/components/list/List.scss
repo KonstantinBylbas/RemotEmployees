@@ -29,10 +29,12 @@
         .body{
             max-height: 20rem;
             margin: 32px 12px 0 12px;
+            overflow-y: auto;
         }
     }
 
     .head {
+        padding: 0 20px 0 0;
         display: flex;
         align-items: center;
         position: relative;
@@ -50,7 +52,7 @@
             display: inline-block;
             position: absolute;
             top: calc(50% - 10px);
-            right: 23px;
+            right: 0;
             border: solid black;
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
@@ -73,5 +75,9 @@
         border-left: 1px solid;
         overflow: hidden;
         transition: 0.3s;
+    }
+
+    @media only screen and(max-width: 700px) {
+        padding: 24px;
     }
 }

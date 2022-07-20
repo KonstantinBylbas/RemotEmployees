@@ -25,19 +25,27 @@ nav{
 
     @media only screen and(max-width: 1200px) {
         .container{
+            .logo{
+                width: auto;
+                height: 42px;
+            }
+
             .menu{
                 width: 378px;
+                max-height: 0;
                 position: fixed;
-                top: -130vh;
+                top: 78px;
                 right: 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 background-color: $primary;
                 transition: 0.3s;
+                overflow: hidden;
+                z-index: 10;
 
                 &.open{
-                    top: 95px;
+                    max-height: 90vh;
                 }
 
                 a{
@@ -71,6 +79,14 @@ nav{
 
             .menuBtn{
                 display: block;
+            }
+        }
+    }
+
+    @media only screen and(max-width: 500px) {
+        .container{
+            .menu{
+                width: 100%;
             }
         }
     }

@@ -9,7 +9,7 @@ export default function Nav() {
     return (
         <nav>
             <div className="container row">
-                <svg xmlns="http://www.w3.org/2000/svg" width="242" height="59" viewBox="0 0 242 59" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="242" height="59" viewBox="0 0 242 59" fill="none" className='logo'>
                     <path d="M47.0197 11.9021L30.8045 58.4481H73.3676V11.9021H47.0197Z" fill="url(#paint0_linear_601_15)" />
                     <path d="M49.0465 17.8545H57.1527L66.8818 34.9194L57.1527 52.4019H49.0465L57.9627 34.9194L49.0465 17.8545Z" fill="white" />
                     <path d="M26.3479 46.3796L42.5602 0H0V46.3796H26.3479Z" fill="url(#paint1_linear_601_15)" />
@@ -37,16 +37,16 @@ export default function Nav() {
                 </svg>
 
                 <div className={`menu ${isOpenMenu ? 'open' : ''}`}>
-                    <a href="#services">
+                    <a href="#services" onClick={() => setIsOpenMenu(false)}>
                         Услуги
                     </a>
-                    <a href="#portfolio">
+                    <a href="#portfolio" onClick={() => setIsOpenMenu(false)}>
                         Портфолио
                     </a>
-                    <a href="#stages">
+                    <a href="#stages" onClick={() => setIsOpenMenu(false)}>
                         Этапы
                     </a>
-                    <a href="#designers">
+                    <a href="#designers" onClick={() => setIsOpenMenu(false)}>
                         Дизайнеры
                     </a>
                     <Button text='Заказать' type='secondary' />

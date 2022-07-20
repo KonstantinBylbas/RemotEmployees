@@ -1,44 +1,106 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
-footer{
+footer {
     background-color: $primary;
 
-    .container{
+    .container {
         padding: 100px 0 80px 0;
-        justify-content: space-between;
+        display: grid;
+        grid-template:
+            "logo phones email"
+            "messangers phones email"
+            "rights rights rights";
 
-        *{
+        * {
             color: $light;
         }
 
-        div{
-            width: 25%;
+        .messangers,
+        .email,
+        .phones {
+            width: 80%;
+        }
 
-            &:first-of-type{
-                .row{
-                    width: 100%;
-                    margin: 45px 0 0 0;
-                    justify-content: space-between;
+        .logo {
+            grid-area: logo;
+        }
+
+        .messangers {
+            margin: 45px 0 0 0;
+            justify-content: space-between;
+            grid-area: messangers;
+        }
+
+        .phones {
+            grid-area: phones;
+
+            a {
+                margin: 13px 0;
+                display: flex;
+                align-items: center;
+
+                svg {
+                    margin: 0 10px 0 0;
                 }
             }
+        }
 
-            &:nth-of-type(2){
-                a{
-                    margin: 13px 0;
-                    display: flex;
-                    align-items: center;
+        .email {
+            grid-area: email;
 
-                    svg{
-                        margin: 0 10px 0 0;
-                    }
-                }
+            a {
+                margin: 13px 0;
+                display: block;
+            }
+        }
+
+        .rights {
+            margin: 120px 0 0 0;
+            grid-area: rights;
+            text-align: center;
+        }
+
+        @media only screen and(max-width: 900px) {
+            grid-template:
+                "logo phones"
+                "messangers phones"
+                "email phones"
+                "rights rights";
+
+            .rights {
+                margin: 40px 0 0 0;
+            }
+        }
+
+        @media only screen and(max-width: 700px) {
+            grid-template:
+                "logo"
+                "phones"
+                "messangers"
+                "email"
+                "rights";
+
+            .logo,
+            .messangers,
+            .email,
+            .phones,
+            .rights {
+                width: 60%;
+                margin: 0 auto;
             }
 
-            &:nth-of-type(3){
-                a{
-                    margin: 13px 0;
-                    display: block;
-                }
+            .messangers {
+                margin: 58px auto 40px auto;
+            }
+        }
+
+        @media only screen and(max-width: 500px) {
+            .logo,
+            .messangers,
+            .email,
+            .phones,
+            .rights {
+                width: 90%;
             }
         }
     }

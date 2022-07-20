@@ -5,6 +5,9 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SendMessage from '../../services/sendMessage';
+import MobileHeader from './assets/background/mobile/mobileHeader.webp';
+import MobileSection3 from './assets/background/mobile/mobileSection3.webp';
+import MobileSection4 from './assets/background/mobile/mobileSection4.webp';
 
 export default function Home() {
 
@@ -17,19 +20,36 @@ export default function Home() {
         autoplaySpeed: 6000,
         slidesToShow: 1.5,
         slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1.2,
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
     };
 
     return (
         <div className="home">
             <header>
-                <div className="container">
-                    <h1>
-                        Разработка интернет-магазина с нуля за неделю
-                    </h1>
-                    <p>
-                        Дизайн интернет магазина, элементов микро UX, корзин, личного кабинета - от фирменного стиля до пользовательского интерфейса в сжатые сроки с командой Virtual Designers
-                    </p>
-                    <Button text='Заказать' type='secondary big' />
+                <div className="column">
+                    <img src={MobileHeader} alt="" className='mobile' />
+                    <div className="container">
+                        <h1>
+                            Разработка интернет-магазина с нуля за неделю
+                        </h1>
+                        <p>
+                            Дизайн интернет магазина, элементов микро UX, корзин, личного кабинета - от фирменного стиля до пользовательского интерфейса в сжатые сроки с командой Virtual Designers
+                        </p>
+                        <Button text='Заказать' type='secondary big' />
+                    </div>
                 </div>
             </header>
 
@@ -56,15 +76,15 @@ export default function Home() {
                     <Slider {...settings}>
                         {
                             tmp = 1,
-                            [['Анализ', 'Для того, чтобы онлайн-магазин приносил выгоду, перед его запуском необходимо провести анализ других предложений рынка, оценить конкурентов и найти наиболее удобное решение.'], ['Визуальное решение', 'Разработка дизайна ключевых страниц магазина – главная, каталог, информационные разделы, раздел корзины, товаров. Для нас главное – передать настроение бренда, сделать удобный для пользователя сайт. '], ['Техническая реализация', 'После утверждения дизайн-макета наступает следующий этап – верстка. Это трудоемкий процесс: программисты должны все тщательно прописать, чтобы не допустить технических ошибок.'],['Наполнение контентом','Создание и публикация текстов, а также видео материала. Хороший контент и качественные фотографии привлекают больше посетителей и помогают клиенту лучше ознакомиться с ассортиментом.'],['Тестирование','Составление плана тестирования для определения ошибок. Проверка работы сайта и визуального восприятия для улучшения сайта. Также используются чек-листы для четкого определения ошибок и их устранения.']].map(block =>
+                            [['Анализ', 'Для того, чтобы онлайн-магазин приносил выгоду, перед его запуском необходимо провести анализ других предложений рынка, оценить конкурентов и найти наиболее удобное решение.'], ['Визуальное решение', 'Разработка дизайна ключевых страниц магазина – главная, каталог, информационные разделы, раздел корзины, товаров. Для нас главное – передать настроение бренда, сделать удобный для пользователя сайт. '], ['Техническая реализация', 'После утверждения дизайн-макета наступает следующий этап – верстка. Это трудоемкий процесс: программисты должны все тщательно прописать, чтобы не допустить технических ошибок.'], ['Наполнение контентом', 'Создание и публикация текстов, а также видео материала. Хороший контент и качественные фотографии привлекают больше посетителей и помогают клиенту лучше ознакомиться с ассортиментом.'], ['Тестирование', 'Составление плана тестирования для определения ошибок. Проверка работы сайта и визуального восприятия для улучшения сайта. Также используются чек-листы для четкого определения ошибок и их устранения.']].map(block =>
                                 <div className='block'>
                                     <div>
-                                    <h3>
-                                        {tmp + '. ' + block[0]}
-                                    </h3>
-                                    <p>
-                                        {block[1]}
-                                    </p>
+                                        <h3>
+                                            {tmp + '. ' + block[0]}
+                                        </h3>
+                                        <p>
+                                            {block[1]}
+                                        </p>
                                     </div>
                                     <img src={require(`./assets/stages/${tmp++}.webp`)} alt={`Онлайн-магазин ` + block} />
                                 </div>
@@ -101,7 +121,8 @@ export default function Home() {
             </section>
 
             <section className='home_section_3' id='designers'>
-                <div className="container">
+                <div className="container column">
+                <img src={MobileSection3} alt="" className='mobile' />
                     <h2>
                         Необходимо больше информации?
                     </h2>
@@ -113,20 +134,22 @@ export default function Home() {
             </section>
 
             <section className='home_section_4'>
-                <div className="container">
-                    <h2>
-                        Обсудить проект
-                    </h2>
-                    <p>
-                        Расскажите о своих бизнес-целях и мы поможем вам в их достижении
-                    </p>
-                    <form onSubmit={(event) => SendMessage(event)}>
-                        <input type="text" name='name' placeholder='Имя' required minLength={2} />
-                        <input type="text" name='messanger' placeholder='Telegram/Viber' required minLength={2} maxLength={30} />
-                        <input type="email" name='email' placeholder='Email' required />
-                        <Button text='Отправить' type='secondary big' />
-                    </form>
-                </div>
+                    <div className="container column">
+                        <h2>
+                            Обсудить проект
+                        </h2>
+                        <p>
+                            Расскажите о своих бизнес-целях и мы поможем вам в их достижении
+                        </p>
+                        <form onSubmit={(event) => SendMessage(event)}>
+                            <input type="text" name='name' placeholder='Имя' required minLength={2} />
+                            <input type="text" name='messanger' placeholder='Telegram/Viber' required minLength={2} maxLength={30} />
+                            <input type="email" name='email' placeholder='Email' required />
+                            <Button text='Отправить' type='secondary big' />
+                        </form>
+
+                        <img src={MobileSection4} alt="" className='mobile' />
+                    </div>
             </section>
         </div>
     )
